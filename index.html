@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<style type="text/css">
+	
+</style>
+<link rel="stylesheet" href="css/personal_web2.css">
+<script type="text/javascript" src="js/getPos.js"></script>
+<script type="text/javascript">
+	
+        window.onload = function () {
+            var oCeil=document.getElementById('ceil');
+
+            var top=getPos(oCeil).top;
+
+            
+
+            window.onscroll=function(){
+                var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+                if(scrollTop>=top+1){
+                    oCeil.style.position='fixed';
+                    oCeil.style.left=0;
+                    oCeil.style.top=0;
+                    oCeil.style.display = 'block';
+                }else{
+                    oCeil.style.position='';
+                    oCeil.style.display = 'none';
+                }
+            };
+
+            var oLeft=document.querySelectorAll('input')[0];
+			var oRight=document.querySelectorAll('input')[1];
+			var aLi=document.querySelectorAll('#ul1 li');
+			var arr=[];
+			for(var i=0; i<aLi.length; i++){
+				arr[i]=aLi[i].className;
+			}
+			oLeft.onclick=function(){
+				arr.unshift(arr.pop());
+				for(var i=0; i<arr.length; i++){
+					aLi[i].className=arr[i];
+				}
+			};
+			oRight.onclick=function(){
+				arr.push(arr.shift());
+				console.log(arr);
+				for(var i=0; i<arr.length; i++){
+					aLi[i].className=arr[i];
+				}
+			};
+
+        };
+</script>
+</head>
+<body>
+	<div class="personal_web" id="personal_web">
+	<!-- 首页 -->
+		<div class="header">
+			<img src="img/3.jpg" class="h_back">
+			<div class="ceil" id="ceil">
+				<ul class="c_con clearfix">
+					<li class="fl"><a href="#personal_web" title="">首页</a></li>
+					<li class="fl"><a href="#resume" title="">关于我</a></li>
+					<li class="fl"><a href="#workshow" title="">专业技能</a></li>
+					<li class="fl"><a href="#tel" title="">联系我</a></li>
+				</ul>
+			</div>
+			<div class="avatar">
+				<img src="img/8.jpg">
+			</div>
+			<p class="pos">张立群·前端工程师</p>
+		</div>
+	<!-- 关于我 -->
+		<div class="resume" id="resume">
+			<div class="r_left">
+				<h2>About..<span>!</span></h2>
+				<p>姓名：张立群</p>
+				<p>性别：女</p>
+				<p>年龄：26</p>
+				<p>毕业院校：电子科技大学成都学院</p>
+				<p>学历：本科</p>
+				<p>专业：信息管理与信息系统</p>
+				<p>XXXXXXXXXXXXX</p>
+			</div>
+			<div class="r_right">
+				<h2>Skills..<span>!</span></h2>
+				<p>HTML</p>
+				<div>
+					<p class="r_ceil1">80%</p>
+				</div>
+				<p>CSS</p>
+				<div>
+					<p class="r_ceil2">80%</p>
+				</div>
+				<p>JS</p>
+				<div>
+					<p class="r_ceil3">75%</p>
+				</div>
+				<p>H5/CSS3</p>
+				<div>
+					<p class="r_ceil4">70%</p>
+				</div>
+			</div>		
+		
+			<div class="r_bottom">
+				<h2>工作经历</h2>
+				<div class="experience clearfix">
+					<div class="third fl">
+						<p>2016年4月——至今</p>
+						<p>智能社培训</p>
+						<p>XXXXXXX</p>
+					</div>
+					
+					<div class="second fl">
+						<p>2014年3月——2016年1月</p>
+						<p>济南东方农夫饲料有限公司   办公室工作人员</p>
+						<p>XXXXXXX</p>
+					</div>
+					
+					<div class="first fl">
+						<p>2012年6月——2013年10月</p>
+						<p>昆明市西山区委宣传部    新闻中心工作人员</p>
+						<p>XXXXXXX</p>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+    <!-- 专业技能 -->
+		<div class="workshow" id="workshow">
+			<div class="btn">
+				<input type="button" value="←">
+				<input type="button" value="→">
+			</div>
+			
+			<ul id="ul1">
+				<li class="l2"><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+				<li class="l1"><a href="demo/Shuffling_figure.html" title=""></a></li>
+				<li class="cur"><a href="demo/throughput.html" title=""></a></li>
+				<li class="r1"><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+				<li class="r2"><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+				<li><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+				<li><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+				<li><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+				<li><a href="demo/Apple_menue.html" title="">Apple menue</a></li>
+			</ul>
+		</div>
+	<!-- 联系我 -->
+		<div class="tel" id="tel">
+			<p>tel：18510939711</p>
+			<p>QQ：894359701</p>
+			<p>Email：jinquncool@163.com</p>
+		</div>
+	</div>
+	
+</body>
+</html>
